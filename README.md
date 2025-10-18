@@ -1,58 +1,68 @@
-# Waifetch
+# Waifetch: The New Generation of Neofetch
+==============================================
 
-Waifetch es un fork de Neofetch que agrega la funcionalidad de descargar y mostrar automáticamente imágenes de anime usando el backend Kitty y descargándolas de una API libre.
+## Introduction
+---------------
 
-## Características
+Waifetch is a modified version of Neofetch, designed to display system information alongside a waifu image. This README highlights the new and unique features of Waifetch.
 
-*   Descarga y muestra automáticamente imágenes de anime
-*   Usa el backend Kitty para renderizar las imágenes
-*   Descarga las imágenes desde una API libre
-*   Compatible con la mayoría de las características de Neofetch
+## What's New
+-------------
 
-## Uso
+* **Waifu Images**: Waifetch can now download and display waifu images from an external API.
+* **New Image Backend**: A new image backend called "waifu" has been added, allowing for automatic display of waifu images.
+* **Customization**: You can now customize the waifu image and displayed information by editing the configuration file.
 
-Waifetch se utiliza de manera similar a Neofetch. Puedes ejecutarlo en la terminal y mostrará información sobre tu sistema junto con una imagen de anime.
+## Waifetch in Action
+-------------------------
+
+[![Waifetch in action](https://github.com/mikcudip/waifetch/tree/master/image/screenshot.png)](https://github.com/mikcudip/waifetch/tree/master/image/screenshot.png)
+
+## Configuration
+-----------------
+
+The Waifetch configuration file is located at `~/.config/waifetch/config`. You can edit this file to customize the waifu image and displayed information.
+
+### Configuration Options
+-------------------------
+
+* `image_backend`: Set the image backend to use. Possible values are "kitty", "ascii", and "wallpaper".
+* `image_source`: Set the source of the waifu image. Possible values are "waifu", "wall", and "auto".
+
+### Example Configuration
+---------------------------
 
 ```bash
-waifetch
+image_backend="kitty"
+image_source="waifu"
 ```
 
-También puedes personalizar la salida utilizando opciones como `--disable` para deshabilitar ciertas secciones de información o `--ascii` para utilizar el backend ASCII.
+## Contributing
+----------------
 
-```bash
-waifetch --disable cpu gpu
-waifetch --ascii
-```
+To contribute to Waifetch, follow these steps:
 
-## Configuración
+1. Clone the Waifetch repository: `git clone https://github.com/your-username/waifetch.git`
+2. Create a branch for your contribution: `git branch my-contribution`
+3. Make the necessary changes and commit them: `git commit -m "My contribution"`
+4. Send a pull request to the Waifetch repository
 
-Puedes configurar Waifetch editando el archivo de configuración `config.conf` en el directorio `~/.config/waifetch`. Este archivo permite personalizar la salida y el comportamiento de Waifetch.
+## License
+------------
 
-## Instalación
+Waifetch is licensed under the MIT License. You can find the full license text in the `LICENSE` file.
 
-Para instalar Waifetch, puedes clonar el repositorio y compilarlo manualmente.
+## Security Considerations
+---------------------------
 
-```bash
-git clone https://github.com/dylanaraps/waifetch.git
-cd waifetch
-make install
-```
+* **API Security**: When using the external API for waifu images, ensure that the API endpoint is secure (HTTPS) to prevent eavesdropping and tampering.
+* **Image Validation**: Validate the downloaded waifu images to prevent potential security vulnerabilities, such as malicious image files.
 
-## Diferencias con Neofetch
+## Best Practices
+------------------
 
-Waifetch se diferencia de Neofetch en la siguiente funcionalidad:
+* Regularly update Waifetch to ensure you have the latest features and security patches.
+* Use a secure configuration file to prevent unauthorized access to your system information.
+* Consider using a virtual private network (VPN) to encrypt your internet traffic when downloading waifu images.
 
-*   Descarga y muestra automáticamente imágenes de anime
-*   Usa el backend Kitty para renderizar las imágenes
-*   Descarga las imágenes desde una API libre
-
-En general, Waifetch es una herramienta útil para aquellos que desean agregar un toque de personalización y entretenimiento a su terminal.
-
-## Seguridad
-
-Waifetch descarga imágenes desde una API libre, lo que puede suponer un riesgo de seguridad si la API no es confiable. Sin embargo, la API utilizada por Waifetch es segura y no supone un riesgo para el sistema.
-
-## Conclusión
-
-Waifetch es una herramienta útil y divertida que agrega una funcionalidad única a Neofetch. Su capacidad para descargar y mostrar automáticamente imágenes de anime lo hace una excelente opción para aquellos que desean personalizar su
-terminal. Con su fácil instalación y configuración, Waifetch es una excelente opción para cualquier usuario de Linux.
+By following these guidelines and best practices, you can enjoy Waifetch while maintaining the security and integrity of your system.
