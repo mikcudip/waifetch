@@ -16,7 +16,7 @@ Waifetch is a modified version of Neofetch, designed to display system informati
 ## Waifetch in Action
 -------------------------
 
-[![Waifetch in action](https://github.com/mikcudip/waifetch/tree/master/image/screenshot.png)](https://github.com/mikcudip/waifetch/tree/master/image/screenshot.png)
+[Waifetch in action](https://raw.githubusercontent.com/mikcudip/waifetch/refs/heads/master/image/screenshot.png)
 
 ## Configuration
 -----------------
