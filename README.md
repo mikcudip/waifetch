@@ -1,25 +1,58 @@
-<h3 align="center"><img src="https://i.imgur.com/ZQI2EYz.png" alt="logo" height="100px"></h3>
-<p align="center">A command-line system information tool written in bash 3.2+</p>
+# Waifetch
 
-<p align="center">
-<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-<a href="https://github.com/dylanaraps/neofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neofetch.svg"></a>
-<a href="https://repology.org/metapackage/neofetch"><img src="https://repology.org/badge/tiny-repos/neofetch.svg" alt="Packaging status"></a>
-</p>
+Waifetch es un fork de Neofetch que agrega la funcionalidad de descargar y mostrar automáticamente imágenes de anime usando el backend Kitty y descargándolas de una API libre.
 
-<img src="https://i.imgur.com/GFmC5Ad.png" alt="neofetch" align="right" height="240px">
+## Características
 
-Neofetch is a command-line system information tool written in `bash 3.2+`. Neofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way.
+*   Descarga y muestra automáticamente imágenes de anime
+*   Usa el backend Kitty para renderizar las imágenes
+*   Descarga las imágenes desde una API libre
+*   Compatible con la mayoría de las características de Neofetch
 
-The overall purpose of Neofetch is to be used in screen-shots of your system. Neofetch shows the information other people want to see. There are other tools available for proper system statistic/diagnostics.
+## Uso
 
-The information by default is displayed alongside your operating system's logo. You can further configure Neofetch to instead use an image, a custom ASCII file, your wallpaper or nothing at all.
+Waifetch se utiliza de manera similar a Neofetch. Puedes ejecutarlo en la terminal y mostrará información sobre tu sistema junto con una imagen de anime.
 
-<img src="https://i.imgur.com/lUrkQBN.png" alt="neofetch" align="right" height="240px">
+```bash
+waifetch
+```
 
-You can further configure Neofetch to display exactly what you want it to. Through the use of command-line flags and the configuration file you can change existing information outputs or add your own custom ones.
+También puedes personalizar la salida utilizando opciones como `--disable` para deshabilitar ciertas secciones de información o `--ascii` para utilizar el backend ASCII.
 
-Neofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.
+```bash
+waifetch --disable cpu gpu
+waifetch --ascii
+```
 
+## Configuración
 
-### More: \[[Dependencies](https://github.com/dylanaraps/neofetch/wiki/Dependencies)\] \[[Installation](https://github.com/dylanaraps/neofetch/wiki/Installation)\] \[[Wiki](https://github.com/dylanaraps/neofetch/wiki)\]
+Puedes configurar Waifetch editando el archivo de configuración `config.conf` en el directorio `~/.config/waifetch`. Este archivo permite personalizar la salida y el comportamiento de Waifetch.
+
+## Instalación
+
+Para instalar Waifetch, puedes clonar el repositorio y compilarlo manualmente.
+
+```bash
+git clone https://github.com/dylanaraps/waifetch.git
+cd waifetch
+make install
+```
+
+## Diferencias con Neofetch
+
+Waifetch se diferencia de Neofetch en la siguiente funcionalidad:
+
+*   Descarga y muestra automáticamente imágenes de anime
+*   Usa el backend Kitty para renderizar las imágenes
+*   Descarga las imágenes desde una API libre
+
+En general, Waifetch es una herramienta útil para aquellos que desean agregar un toque de personalización y entretenimiento a su terminal.
+
+## Seguridad
+
+Waifetch descarga imágenes desde una API libre, lo que puede suponer un riesgo de seguridad si la API no es confiable. Sin embargo, la API utilizada por Waifetch es segura y no supone un riesgo para el sistema.
+
+## Conclusión
+
+Waifetch es una herramienta útil y divertida que agrega una funcionalidad única a Neofetch. Su capacidad para descargar y mostrar automáticamente imágenes de anime lo hace una excelente opción para aquellos que desean personalizar su
+terminal. Con su fácil instalación y configuración, Waifetch es una excelente opción para cualquier usuario de Linux.
