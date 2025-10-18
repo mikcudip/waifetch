@@ -4120,13 +4120,20 @@ get_image_source() {
 }
 
 get_waifu() {
-    TMP_PATH="/tmp/image-waifetch-temp.webp"
-    rm -f "$TMP_PATH"
-    URL_WAIFU=$(curl -s https://api.nekosapi.com/v4/images/random | jq -r '.[0].url')
-    echo "Descargando: $URL_WAIFU"
-    echo "Guardando en: $TMP_PATH"
-    curl -sL "$URL_WAIFU" -o "$TMP_PATH"
-    image="$TMP_PATH"
+    # # nsfw
+    # URL_WAIFU=$(curl -s https://api.nekosapi.com/v4/images/random | jq -r '.[0].url')
+    # # safe
+    # curl -s https://api.waifu.pics/sfw/waifu | jq -r '.url'
+    # # safe
+    # URL_WAIFU=$(curl -s https://nekos.best/api/v2/neko | jq -r '.results[0].url')
+    rm -rf "${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/waifetch"
+    URL_WAIFU=$(curl -s https://nekos.best/api/v2/neko | jq -r '.results[0].url')
+    EXTENSION_WAIFU=${URL_WAIFU##*.}
+    TMP_PATH_WAIFU_DIR="/tmp/waifetch"
+    mkdir -p "${TMP_PATH_WAIFU_DIR}"
+    TMP_PATH_WAIFU="${TMP_PATH_WAIFU_DIR}/waifetch-image.${EXTENSION_WAIFU}"
+    curl -sL "$URL_WAIFU" -o "$TMP_PATH_WAIFU"
+    image="$TMP_PATH_WAIFU"
 }
 
 get_wallpaper() {
@@ -5389,6 +5396,7 @@ get_args() {
                 [[ -d "$thumbnail_dir" ]] && rm -rf "$thumbnail_dir"
                 rm -rf "/Library/Caches/waifetch/"
                 rm -rf "/tmp/waifetch/"
+                rm -rf "${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/waifetch"
                 exit
             ;;
 
